@@ -3,23 +3,23 @@ mongodb=require('mongoose');
 const ContactSchema=mongodb.Schema({
 
 	first_name:{
-		type:string,
-		required:true
+		type: String,
+		required: true
 
 	},
 	last_name:{
-		type:string,
-		required:true
+		type: String,
+		required: true
 
 	},
 	phone:{
-		type:string,
-		required:true
+		type: String,
+		required: true
 
 	}
 
 })
 
-const Contact=mongodb.model('contact',ContactSchema);
+const contact=mongodb.model('contact',ContactSchema);
 
-module.exports=Contact;
+module.exports=contact;

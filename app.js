@@ -5,7 +5,7 @@ db=require('./models/db');
 app=express();
 route=require('./routes/route')
 
-// setting up midllewars
+// setting up midellwars
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 app.use('/api',route);
