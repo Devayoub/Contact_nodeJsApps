@@ -16,5 +16,22 @@ export class ContactService {
     .pipe(map( res => res.json()));
     
     }
+    addContact(newContact)
+    {
+        var headers=new Headers();
+        headers.append('Content-Type','application/json');
+        return this.http.post('http://localhost:3031/api/contact/',newContact,{headers: headers})
+        .pipe(map( res => res.json()));
+
+    }
+
+    deleteContact(id)
+    {
+
+      return this.http.delete('http://localhost:3031/api/contact/'+id)
+      .pipe(map( res => res.json()));
+
+
+    }
     
 }
