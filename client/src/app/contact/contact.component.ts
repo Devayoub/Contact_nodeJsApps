@@ -10,11 +10,19 @@ import {Contact} from '../contact';
   providers:[ContactService]
 })
 export class ContactComponent implements OnInit {
-  
-  constructor(private contactService : ContactService) { }
+  contacts:Contact[];
+  contact:Contact;
+  first_name:string;
+  last_name:string;
 
+  
+  constructor( ) { }
+contactService : ContactService
   ngOnInit() {
-            this.contactService.getContacts();
+
+            this.contactService.getContacts()
+            .subscribe(contacts => 
+            this.contacts=contacts);
 
 
   }

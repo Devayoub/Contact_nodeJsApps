@@ -2,20 +2,27 @@ import { Injectable } from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import {Contact} from './contact';
 import { map } from "rxjs/operators";
+import {Observable ,of} from "rxjs"
 
 
+@Injectable(
+    {
+     providedIn: 'root'
+    }
 
-@Injectable()
+)
 export class ContactService {
+
 
     constructor(private http:Http) { }
 
-    getContacts(){
+    getContacts() :Observable<Contact[]>{
 
     return this.http.get('http://localhost:3031/api/contact/')
     .pipe(map( res => res.json()));
     
     }
+ 
     addContact(newContact)
     {
         var headers=new Headers();
